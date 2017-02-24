@@ -16,4 +16,6 @@ export class SimpleCardContainerComponent<T> {
 
 	@ContentChild(CardContentTemplate) cardContent: CardContentTemplate;
 	@ContentChild(CardFooterTemplate) cardFooter: CardFooterTemplate;
+
+	openCard: T;
 }

@@ -1,4 +1,4 @@
-import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
 import { SimpleCardContainerComponent } from '../container/simpleCardContainer.component';
 
@@ -9,24 +9,18 @@ import { SimpleCardContainerComponent } from '../container/simpleCardContainer.c
 })
 export class CardComponent<T> {
 	@Input() item: T;
+	@Input() isOpen: boolean;
 
-	isOpen: boolean;
+	@Output() open: EventEmitter<T> = new EventEmitter<T>();
+	@Output() close: EventEmitter<void> = new EventEmitter<void>();
 
 	constructor(public cardContainer: SimpleCardContainerComponent<T>) {}
 
 	toggleContent(): void {
 		if (this.isOpen) {
-			this.close();
+			this.close.emit();
 		} else {
-			this.open();
+			this.open.emit(this.item);
 		}
-	}
-
-	open(): void {
-		this.isOpen = true;
-	}
-
-	close(): void {
-		this.isOpen = false;
 	}
 }

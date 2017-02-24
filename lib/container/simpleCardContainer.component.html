@@ -5,14 +5,17 @@
 			<div class="card-columns-header">
 				<div *ngFor="let column of columns">
 					<scc-column-header [column]="column"
-								   (sort)="sort.next($event)"></scc-column-header>
+									   (sort)="sort.next($event)"></scc-column-header>
 				</div>
 				<div class="clearfix"></div>
 			</div>
 
 			<div *ngIf="data != null">
 				<div class="card-item-repeat" *ngFor="let card of data">
-					<scc-card [item]="card"></scc-card>
+					<scc-card [item]="card"
+							  [isOpen]="card === openCard"
+							  (open)="openCard = $event"
+							  (close)="openCard = null"></scc-card>
 				</div>
 			</div>
 		</div>
