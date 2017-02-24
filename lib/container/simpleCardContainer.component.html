@@ -5,7 +5,7 @@
 			<div class="card-columns-header">
 				<div *ngFor="let column of columns">
 					<column-header [column]="column"
-								   (sort)="sort($event)"></column-header>
+								   (sort)="sort.next($event)"></column-header>
 				</div>
 				<div class="clearfix"></div>
 			</div>

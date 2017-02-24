@@ -1,4 +1,4 @@
-import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
 import { IColumn } from '../interfaces';
 
@@ -9,10 +9,7 @@ import { IColumn } from '../interfaces';
 })
 export class SimpleCardContainerComponent<T> {
 	@Input() columns: IColumn<T>[];
-
 	@Input() data: T[];
 
-	sort(column: IColumn<T>): void {
-		console.log('Sort', column);
-	}
+	@Output() sort: EventEmitter<IColumn<T>> = new EventEmitter<IColumn<T>>();
 }

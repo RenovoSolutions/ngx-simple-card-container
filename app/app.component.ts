@@ -45,6 +45,14 @@ export class AppComponent {
 		];
 	}
 
+	sort(sortColumn: IColumn<ICardItem>): void {
+		this.columns = this.columns.map(col => {
+			return col.name === sortColumn.name
+				? sortColumn
+				: col;
+		});
+	}
+
 	private range(low: number, high: number): number[] {
 		let numbers = [];
 		for (let i = low; i < high; i++) {
