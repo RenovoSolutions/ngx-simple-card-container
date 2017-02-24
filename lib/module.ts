@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
-// import { CommonModule } from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 import { SimpleCardContainer } from './container/simpleCardContainer.component';
 
 @NgModule({
 	imports: [
-		// CommonModule,
+		CommonModule,
 	],
 	declarations: [SimpleCardContainer],
 	exports: [SimpleCardContainer],
