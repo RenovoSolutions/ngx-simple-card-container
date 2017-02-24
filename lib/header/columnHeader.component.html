@@ -3,4 +3,6 @@
 	 (click)="sort.emit(column)"
 	 [title]="column.description || ''">
 	<div><h5>{{column.label}}</h5></div>
+	<i class="fa fa-sort-asc" [hidden]="column.sortDirection !== sortDirection.ascending"></i>
+	<i class="fa fa-sort-desc" [hidden]="column.sortDirection !== sortDirection.descending"></i>
 </div>

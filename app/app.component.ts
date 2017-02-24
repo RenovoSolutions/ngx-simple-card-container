@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { IColumn } from '../lib';
+import { IColumn, SortDirection } from '../lib';
 
 export interface ICardItem {
 	id: number;
@@ -34,6 +34,7 @@ export class AppComponent {
 				label: 'Name',
 				size: 6,
 				getValue: 'name',
+				sortDirection: SortDirection.ascending,
 			},
 			{
 				name: 'value',

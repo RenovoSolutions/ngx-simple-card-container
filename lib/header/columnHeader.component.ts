@@ -2,6 +2,7 @@ import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from 
 
 import { IColumn } from '../interfaces';
 import { BreakpointSizesService } from '../services/breakpointSizes.service';
+import { SortDirection } from '../sortDirection';
 
 @Component({
 	selector: 'column-header',
@@ -13,6 +14,7 @@ export class ColumnHeaderComponent<T> {
 	@Output() sort: EventEmitter<IColumn<T>> = new EventEmitter<IColumn<T>>();
 
 	sizeClass: string;
+	sortDirection = SortDirection;
 
 	constructor(private breakpointSizes: BreakpointSizesService) {}
 
