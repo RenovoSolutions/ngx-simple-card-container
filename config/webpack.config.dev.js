@@ -11,7 +11,7 @@ module.exports = {
 	},
 	entry: {
 		vendor: path.resolve(__dirname, '../source/vendor'),
-		main: path.resolve(__dirname, '../source/index'),
+		main: path.resolve(__dirname, '../source/main.browser'),
 	},
 	target: 'web',
 	output: {
