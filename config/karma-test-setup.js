@@ -13,6 +13,6 @@ require('zone.js/dist/fake-async-test');
 
 window.expect = chai.expect;
 
-var appContext = require.context('../source', true, /\.spec\.ts/);
+var appContext = require.context('../lib', true, /\.spec\.ts/);
 
 appContext.keys().forEach(appContext);
