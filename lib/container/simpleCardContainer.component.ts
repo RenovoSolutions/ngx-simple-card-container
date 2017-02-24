@@ -1,10 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 import { IColumn } from '../interfaces';
 
 @Component({
 	selector: 'simple-card-container',
 	templateUrl: 'simpleCardContainer.component.html',
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SimpleCardContainerComponent<T> {
 	@Input() columns: IColumn<T>[];
