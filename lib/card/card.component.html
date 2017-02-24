@@ -1,12 +1,22 @@
 <div class="card">
-	<div>
+	<div class="header active"
+		 (click)="toggleContent()">
+		<div class="row">
+			<div *ngFor="let column of cardContainer.columns">
+				<scc-card-header-column [column]="column"
+										[item]="item"></scc-card-header-column>
+			</div>
+		</div>
+	</div>
+	
+	<div [hidden]="!isOpen">
 		<div class="body"
 			 *ngIf="cardContainer.cardContent">
 			<template [ngTemplateOutlet]="cardContainer.cardContent.template" [ngOutletContext]="{ $implicit: item }"></template>
 			<div class="clearfix"></div>
 		</div>
 	</div>
-	<div>
+	<div [hidden]="!isOpen">
 		<div class="footer" *ngIf="cardContainer.cardFooter">
 			<template [ngTemplateOutlet]="cardContainer.cardFooter.template" [ngOutletContext]="{ $implicit: item }"></template>
 			<div class="clearfix"></div>
