@@ -12,7 +12,7 @@
 
 			<div *ngIf="data != null">
 				<div class="card-item-repeat" *ngFor="let card of data">
-					{{card | json}}
+					<scc-card [item]="card"></scc-card>
 				</div>
 			</div>
 		</div>

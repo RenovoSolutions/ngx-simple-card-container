@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { BreakpointSizesService } from './services/breakpointSizes.service';
 import { SimpleCardContainerComponent } from './container/simpleCardContainer.component';
 import { ColumnHeaderComponent } from './header/columnHeader.component';
+import { CardComponent } from './card/card.component';
+import { TEMPLATE_DIRECTIVES } from './templates';
 
 @NgModule({
 	imports: [
@@ -12,8 +14,13 @@ import { ColumnHeaderComponent } from './header/columnHeader.component';
 	declarations: [
 		SimpleCardContainerComponent,
 		ColumnHeaderComponent,
+		CardComponent,
+		TEMPLATE_DIRECTIVES,
 	],
-	exports: [SimpleCardContainerComponent],
+	exports: [
+		SimpleCardContainerComponent,
+		TEMPLATE_DIRECTIVES,
+	],
 	providers: [
 		BreakpointSizesService,
 	],

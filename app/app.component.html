@@ -1,3 +1,9 @@
 <scc-simple-card-container [data]="items"
 						   [columns]="columns"
-						   (sort)="sort($event)"></scc-simple-card-container>
+						   (sort)="sort($event)">
+	<div *sccCardContent="let myItem">
+		Name: {{myItem.name}}
+		Value: {{myItem.value}}
+	</div>
+	<div *sccCardFooter>Footer</div>
+</scc-simple-card-container>
