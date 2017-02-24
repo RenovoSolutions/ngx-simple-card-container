@@ -10,12 +10,12 @@ module.exports = {
 		extensions: ['.webpack.js', '.web.js', '.ts', '.js']
 	},
 	entry: {
-		vendor: path.resolve(__dirname, '../source/vendor'),
-		main: path.resolve(__dirname, '../source/main.browser'),
+		vendor: path.resolve(__dirname, '../app/vendor'),
+		main: path.resolve(__dirname, '../app/main.browser'),
 	},
 	target: 'web',
 	output: {
-		path: path.resolve(__dirname, '../source'),
+		path: path.resolve(__dirname, '../app'),
 		publicPath: '/',
 		filename: '[name].js',
 	},
