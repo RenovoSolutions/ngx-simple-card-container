@@ -5,7 +5,7 @@ import { BreakpointSizesService } from '../services/breakpointSizes.service';
 import { SortDirection } from '../sortDirection';
 
 @Component({
-	selector: 'column-header',
+	selector: 'scc-column-header',
 	templateUrl: 'columnHeader.component.html',
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })

@@ -4,8 +4,8 @@
 		<div class="card-container">
 			<div class="card-columns-header">
 				<div *ngFor="let column of columns">
-					<column-header [column]="column"
-								   (sort)="sort.next($event)"></column-header>
+					<scc-column-header [column]="column"
+								   (sort)="sort.next($event)"></scc-column-header>
 				</div>
 				<div class="clearfix"></div>
 			</div>

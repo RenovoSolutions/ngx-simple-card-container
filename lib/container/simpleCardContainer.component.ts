@@ -3,7 +3,7 @@ import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from 
 import { IColumn } from '../interfaces';
 
 @Component({
-	selector: 'simple-card-container',
+	selector: 'scc-simple-card-container',
 	templateUrl: 'simpleCardContainer.component.html',
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
