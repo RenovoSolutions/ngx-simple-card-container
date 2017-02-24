@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { IColumn } from '../lib';
+
 export interface ICardItem {
 	id: number;
 	name: string;
@@ -12,6 +14,7 @@ export interface ICardItem {
 })
 export class AppComponent {
 	items: ICardItem[];
+	columns: IColumn<ICardItem>[];
 	
 	constructor() {
 		const rangeLow: number = 1;
@@ -24,6 +27,21 @@ export class AppComponent {
 				value: num,
 			};
 		});
+
+		this.columns = [
+			{
+				name: 'name',
+				label: 'Name',
+				size: 6,
+				getValue: 'name',
+			},
+			{
+				name: 'value',
+				label: 'Value',
+				size: 6,
+				getValue: 'value',
+			},
+		];
 	}
 
 	private range(low: number, high: number): number[] {

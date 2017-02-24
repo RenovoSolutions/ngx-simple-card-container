@@ -2,6 +2,13 @@
 <div class="row">
 	<div class="col-xs-12">
 		<div class="card-container">
+			<div class="card-columns-header">
+				<div *ngFor="let column of columns">
+					{{column | json}}
+				</div>
+				<div class="clearfix"></div>
+			</div>
+
 			<div *ngIf="data != null">
 				<div class="card-item-repeat" *ngFor="let card of data">
 					{{card | json}}
