@@ -6,7 +6,7 @@ import { IColumn } from '../interfaces';
 	selector: 'simple-card-container',
 	templateUrl: 'simpleCardContainer.component.html',
 })
-export class SimpleCardContainer<T> {
+export class SimpleCardContainerComponent<T> {
 	@Input() columns: IColumn<T>[];
 
 	@Input() data: T[];
