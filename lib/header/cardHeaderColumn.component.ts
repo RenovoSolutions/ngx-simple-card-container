@@ -5,7 +5,7 @@ import { BreakpointSizesService } from '../services/breakpointSizes.service';
 
 @Component({
 	selector: 'scc-card-header-column',
-	templateUrl: 'cardHeaderColumn.component.html',
+	template: require('./cardHeaderColumn.component.html'),
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CardHeaderColumnComponent<T> implements OnInit {

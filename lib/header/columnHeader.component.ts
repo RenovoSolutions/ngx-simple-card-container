@@ -6,7 +6,7 @@ import { SortDirection } from '../sortDirection';
 
 @Component({
 	selector: 'scc-column-header',
-	templateUrl: 'columnHeader.component.html',
+	template: require('./columnHeader.component.html'),
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ColumnHeaderComponent<T> {

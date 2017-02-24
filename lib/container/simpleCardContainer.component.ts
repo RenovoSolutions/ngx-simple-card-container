@@ -5,7 +5,7 @@ import { CardContentTemplate, CardFooterTemplate } from '../templates';
 
 @Component({
 	selector: 'scc-simple-card-container',
-	templateUrl: 'simpleCardContainer.component.html',
+	template: require('./simpleCardContainer.component.html'),
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SimpleCardContainerComponent<T> {
