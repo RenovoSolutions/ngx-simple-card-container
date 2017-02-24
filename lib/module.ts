@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { BreakpointSizesService } from './services/breakpointSizes.service';
 import { SimpleCardContainerComponent } from './container/simpleCardContainer.component';
+import { ColumnHeaderComponent } from './header/columnHeader.component';
 
 @NgModule({
 	imports: [
@@ -10,6 +11,7 @@ import { SimpleCardContainerComponent } from './container/simpleCardContainer.co
 	],
 	declarations: [
 		SimpleCardContainerComponent,
+		ColumnHeaderComponent,
 	],
 	exports: [SimpleCardContainerComponent],
 	providers: [

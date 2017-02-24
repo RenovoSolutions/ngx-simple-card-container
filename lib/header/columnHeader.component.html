@@ -1,0 +1,6 @@
+<div class="column-header"
+	 [ngClass]="sizeClass"
+	 (click)="sort.emit(column)"
+	 [title]="column.description || ''">
+	<div><h5>{{column.label}}</h5></div>
+</div>

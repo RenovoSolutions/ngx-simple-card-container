@@ -11,4 +11,8 @@ export class SimpleCardContainerComponent<T> {
 	@Input() columns: IColumn<T>[];
 
 	@Input() data: T[];
+
+	sort(column: IColumn<T>): void {
+		console.log('Sort', column);
+	}
 }
