@@ -1,6 +1,6 @@
 <div class="column-header"
 	 [ngClass]="sizeClass"
-	 (click)="sort.emit(column)"
+	 (click)="changeSort()"
 	 [title]="column.description || ''">
 	<div><h5>{{column.label}}</h5></div>
 	<i class="fa fa-sort-asc" [hidden]="column.sortDirection !== sortDirection.ascending"></i>

@@ -21,4 +21,12 @@ export class ColumnHeaderComponent<T> {
 	ngOnInit(): void {
 		this.sizeClass = this.breakpointSizes.getClass(this.column.size);
 	}
+
+	changeSort(): void {
+		const columnWithSortChanged = {
+			...this.column,
+			sortDirection: SortDirection.toggle(this.column.sortDirection),
+		};
+		this.sort.emit(columnWithSortChanged);
+	}
 }
