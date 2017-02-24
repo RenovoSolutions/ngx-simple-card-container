@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { BreakpointSizesService } from './services/breakpointSizes.service';
 import { SimpleCardContainerComponent } from './container/simpleCardContainer.component';
 
 @NgModule({
@@ -11,5 +12,8 @@ import { SimpleCardContainerComponent } from './container/simpleCardContainer.co
 		SimpleCardContainerComponent,
 	],
 	exports: [SimpleCardContainerComponent],
+	providers: [
+		BreakpointSizesService,
+	],
 })
 export class SimpleCardContainerModule {}
