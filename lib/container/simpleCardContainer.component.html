@@ -30,6 +30,10 @@
 				<div *ngIf="containerFooter">
 					<template [ngTemplateOutlet]="containerFooter.template"></template>
 				</div>
+				<div class="row" *ngIf="!containerFooter">
+					<div class="col-sm-5"><p>Showing <strong>{{data.length}} of {{totalItems}}</strong> total items</p></div>
+					<div class="col-sm-7">Pager placeholder</div>
+				</div>
 			</div>
 		</div>
 	</div>

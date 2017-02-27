@@ -11,7 +11,12 @@ import { CardContentTemplate, CardFooterTemplate, ContainerHeaderTemplate, Conta
 export class SimpleCardContainerComponent<T> {
 	@Input() columns: IColumn<T>[];
 	@Input() data: T[];
+	@Input() count: number;
 	@Input() message: string;
+
+	get totalItems(): number {
+		return this.count || this.data.length;
+	}
 
 	@Output() sort: EventEmitter<IColumn<T>> = new EventEmitter<IColumn<T>>();
 
