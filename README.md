@@ -1,5 +1,5 @@
 # ngx-simple-card-container
-## A simple card container
+## A table container extended with the ability to open and close row details
 
 ## Development:
 
