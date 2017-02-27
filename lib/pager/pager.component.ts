@@ -52,15 +52,21 @@ export class PagerComponent {
 	}
 
 	previous(): void {
-		this.pageNumberChange.emit(this.pageNumber - 1);
+		if (this.pageNumber > 1) {
+			this.pageNumberChange.emit(this.pageNumber - 1);
+		}
 	}
 
 	goto(page: number): void {
-		this.pageNumberChange.emit(page);
+		if (page >= 1 && page <= this.lastPage) {
+			this.pageNumberChange.emit(page);
+		}
 	}
 
 	next(): void {
-		this.pageNumberChange.emit(this.pageNumber + 1);
+		if (this.pageNumber < this.lastPage) {
+			this.pageNumberChange.emit(this.pageNumber + 1);
+		}
 
 	}
 
