@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ContentChild } from '@angular/core';
 
-import { IColumn } from '../interfaces';
+import { IColumn, IPage } from '../interfaces';
 import { CardContentTemplate, CardFooterTemplate, ContainerHeaderTemplate, ContainerFooterTemplate } from '../templates';
 
 @Component({
@@ -12,6 +12,7 @@ export class SimpleCardContainerComponent<T> {
 	@Input() columns: IColumn<T>[];
 	@Input() data: T[];
 	@Input() count: number;
+	@Input() pageNumber: number;
 	@Input() message: string;
 
 	get totalItems(): number {
@@ -19,6 +20,7 @@ export class SimpleCardContainerComponent<T> {
 	}
 
 	@Output() sort: EventEmitter<IColumn<T>> = new EventEmitter<IColumn<T>>();
+	@Output() page: EventEmitter<IPage> = new EventEmitter<IPage>();
 
 	@ContentChild(CardContentTemplate) cardContent: CardContentTemplate;
 	@ContentChild(CardFooterTemplate) cardFooter: CardFooterTemplate;
@@ -26,4 +28,11 @@ export class SimpleCardContainerComponent<T> {
 	@ContentChild(ContainerFooterTemplate) containerFooter: ContainerFooterTemplate;
 
 	openCard: T;
+
+	setPage(pageNumber: number): void {
+		this.page.emit({
+			pageSize: this.data.length,
+			pageNumber,
+		});
+	}
 }

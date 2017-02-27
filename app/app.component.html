@@ -2,6 +2,8 @@
 	<h1>Simple card container</h1>
 	<scc-simple-card-container [data]="items"
 							   [columns]="columns"
+							   [count]="count"
+							   [pageNumber]="pageNumber"
 							   (sort)="sort($event)">
 		<div *sccCardContent="let myItem">
 			Name: {{myItem.name}}

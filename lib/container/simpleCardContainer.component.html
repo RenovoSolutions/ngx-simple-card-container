@@ -32,7 +32,10 @@
 				</div>
 				<div class="row" *ngIf="!containerFooter">
 					<div class="col-sm-5"><p>Showing <strong>{{data.length}} of {{totalItems}}</strong> total items</p></div>
-					<div class="col-sm-7">Pager placeholder</div>
+					<div class="col-sm-7"><scc-pager [totalCount]="totalItems"
+													 [pageSize]="data.length"
+													 [pageNumber]="pageNumber"
+													 (pageNumberChange)="setPage($event)"></scc-pager></div>
 				</div>
 			</div>
 		</div>

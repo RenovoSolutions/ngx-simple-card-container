@@ -15,3 +15,8 @@ export interface IColumn<T> {
 	getValue: { (item: T): number | string | boolean } | string;
 	sortDirection?: SortDirection;
 }
+
+export interface IPage {
+	pageSize: number;
+	pageNumber: number;
+}
