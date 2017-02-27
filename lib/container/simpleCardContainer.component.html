@@ -10,7 +10,7 @@
 			<div class="card-columns-header">
 				<div *ngFor="let column of columns">
 					<scc-column-header [column]="column"
-									   (sort)="sort.next($event)"></scc-column-header>
+									   (sort)="sort.emit($event)"></scc-column-header>
 				</div>
 				<div class="clearfix"></div>
 			</div>
