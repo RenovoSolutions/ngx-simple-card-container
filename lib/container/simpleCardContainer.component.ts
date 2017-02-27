@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ContentChild } from '@angular/core';
 
 import { IColumn } from '../interfaces';
-import { CardContentTemplate, CardFooterTemplate } from '../templates';
+import { CardContentTemplate, CardFooterTemplate, ContainerHeaderTemplate, ContainerFooterTemplate } from '../templates';
 
 @Component({
 	selector: 'scc-simple-card-container',
@@ -17,6 +17,8 @@ export class SimpleCardContainerComponent<T> {
 
 	@ContentChild(CardContentTemplate) cardContent: CardContentTemplate;
 	@ContentChild(CardFooterTemplate) cardFooter: CardFooterTemplate;
+	@ContentChild(ContainerHeaderTemplate) containerHeader: ContainerHeaderTemplate;
+	@ContentChild(ContainerFooterTemplate) containerFooter: ContainerFooterTemplate;
 
 	openCard: T;
 }
