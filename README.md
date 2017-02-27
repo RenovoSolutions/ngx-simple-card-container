@@ -15,8 +15,8 @@
 
 * node 4.2.4 or higher
 
-### Contributers
+### Contributors
 
-[<img alt="SamGraber" src="https://avatars.githubusercontent.com/u/6878589?v=3" width="117">](https://github.com/SamGraber)
+[<img alt="SamGraber" src="https://avatars.githubusercontent.com/u/6878589?v=3" width="117">](https://github.com/SamGraber) |
 :---: |
-[Sam Graber](https://github.com/SamGraber)
+[Sam Graber](https://github.com/SamGraber) |
