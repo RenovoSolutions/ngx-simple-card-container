@@ -9,6 +9,8 @@
 				<div class="clearfix"></div>
 			</div>
 
+			<div class="alert alert-info" *ngIf="message">{{message}}</div>
+
 			<div *ngIf="data != null">
 				<div class="card-item-repeat" *ngFor="let card of data">
 					<scc-card [item]="card"

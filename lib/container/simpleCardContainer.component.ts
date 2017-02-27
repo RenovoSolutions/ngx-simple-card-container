@@ -11,6 +11,7 @@ import { CardContentTemplate, CardFooterTemplate } from '../templates';
 export class SimpleCardContainerComponent<T> {
 	@Input() columns: IColumn<T>[];
 	@Input() data: T[];
+	@Input() message: string;
 
 	@Output() sort: EventEmitter<IColumn<T>> = new EventEmitter<IColumn<T>>();
 
