@@ -9,7 +9,7 @@
 * Run `npm install` to prepare the  project
 * Live edit mode with `npm run start`.
 * Run tests with `npm run test`.
-* Prepare for distrabution with `npm run build`
+* Prepare for distribution with `npm run build`
 
 ### Requirements
 
