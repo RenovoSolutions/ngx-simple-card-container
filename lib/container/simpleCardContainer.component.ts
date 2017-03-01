@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ContentChild } from '@angular/core';
 
-import { IColumn } from '../interfaces';
-import { CardContentTemplate, CardFooterTemplate } from '../templates';
+import { IColumn, IPage } from '../interfaces';
+import { CardContentTemplate, CardFooterTemplate, ContainerHeaderTemplate, ContainerFooterTemplate } from '../templates';
 
 @Component({
 	selector: 'scc-simple-card-container',
@@ -11,11 +11,28 @@ import { CardContentTemplate, CardFooterTemplate } from '../templates';
 export class SimpleCardContainerComponent<T> {
 	@Input() columns: IColumn<T>[];
 	@Input() data: T[];
+	@Input() count: number;
+	@Input() pageNumber: number;
+	@Input() message: string;
+
+	get totalItems(): number {
+		return this.count || this.data.length;
+	}
 
 	@Output() sort: EventEmitter<IColumn<T>> = new EventEmitter<IColumn<T>>();
+	@Output() page: EventEmitter<IPage> = new EventEmitter<IPage>();
 
 	@ContentChild(CardContentTemplate) cardContent: CardContentTemplate;
 	@ContentChild(CardFooterTemplate) cardFooter: CardFooterTemplate;
+	@ContentChild(ContainerHeaderTemplate) containerHeader: ContainerHeaderTemplate;
+	@ContentChild(ContainerFooterTemplate) containerFooter: ContainerFooterTemplate;
 
 	openCard: T;
+
+	setPage(pageNumber: number): void {
+		this.page.emit({
+			pageSize: this.data.length,
+			pageNumber,
+		});
+	}
 }

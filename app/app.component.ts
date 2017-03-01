@@ -15,10 +15,12 @@ export interface ICardItem {
 export class AppComponent {
 	items: ICardItem[];
 	columns: IColumn<ICardItem>[];
+	count = 100;
+	pageNumber = 2;
 	
 	constructor() {
-		const rangeLow: number = 1;
-		const rangeHigh: number = 101;
+		const rangeLow: number = 11;
+		const rangeHigh: number = 21;
 
 		this.items = this.range(rangeLow, rangeHigh).map((num: number): ICardItem => {
 			return {

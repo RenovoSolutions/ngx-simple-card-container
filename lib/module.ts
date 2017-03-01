@@ -6,6 +6,7 @@ import { SimpleCardContainerComponent } from './container/simpleCardContainer.co
 import { ColumnHeaderComponent } from './header/columnHeader.component';
 import { CardHeaderColumnComponent } from './header/cardHeaderColumn.component';
 import { CardComponent } from './card/card.component';
+import { PagerComponent } from './pager/pager.component';
 import { TEMPLATE_DIRECTIVES } from './templates';
 
 @NgModule({
@@ -17,10 +18,12 @@ import { TEMPLATE_DIRECTIVES } from './templates';
 		ColumnHeaderComponent,
 		CardHeaderColumnComponent,
 		CardComponent,
+		PagerComponent,
 		TEMPLATE_DIRECTIVES,
 	],
 	exports: [
 		SimpleCardContainerComponent,
+		PagerComponent,
 		TEMPLATE_DIRECTIVES,
 	],
 	providers: [
