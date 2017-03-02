@@ -7,7 +7,7 @@
 		</li>
 		<li title="Go to previous page"
 			(click)="previous()"
-			[class.disabled]="canGoBack">
+			[class.disabled]="!canGoBack">
 			<a><i class="fa fa-angle-left"></i></a>
 		</li>
 		<li *ngFor="let page of pages"
