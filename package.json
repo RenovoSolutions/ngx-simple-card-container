@@ -1,6 +1,6 @@
 {
   "name": "ngx-simple-card-container",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A table component extended with the ability to open and close row details",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
