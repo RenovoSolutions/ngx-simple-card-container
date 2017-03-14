@@ -19,8 +19,8 @@ export class AppComponent {
 	pageNumber = 2;
 	
 	constructor() {
-		const rangeLow: number = 11;
-		const rangeHigh: number = 21;
+		const rangeLow: number = 1;
+		const rangeHigh: number = 101;
 
 		this.items = this.range(rangeLow, rangeHigh).map((num: number): ICardItem => {
 			return {

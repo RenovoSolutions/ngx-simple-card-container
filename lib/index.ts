@@ -3,3 +3,4 @@ export * from './interfaces';
 export * from './sortDirection';
 export * from './templates';
 export * from './container/simpleCardContainer.component';
+export * from './services/paging.service';

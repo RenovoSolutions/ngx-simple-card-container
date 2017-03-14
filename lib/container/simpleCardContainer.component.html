@@ -17,8 +17,8 @@
 
 			<div class="alert alert-info" *ngIf="message">{{message}}</div>
 
-			<div *ngIf="data != null">
-				<div class="card-item-repeat" *ngFor="let card of data">
+			<div *ngIf="processedData != null">
+				<div class="card-item-repeat" *ngFor="let card of processedData">
 					<scc-card [item]="card"
 							  [isOpen]="card === openCard"
 							  (open)="openCard = $event"
@@ -31,9 +31,9 @@
 					<template [ngTemplateOutlet]="containerFooter.template"></template>
 				</div>
 				<div class="row" *ngIf="!containerFooter">
-					<div class="col-sm-5"><p>Showing <strong>{{data.length}} of {{totalItems}}</strong> total items</p></div>
+					<div class="col-sm-5"><p>Showing <strong>{{processedData.length}} of {{totalItems}}</strong> total items</p></div>
 					<div class="col-sm-7"><scc-pager [totalCount]="totalItems"
-													 [pageSize]="data.length"
+													 [pageSize]="pageSize"
 													 [pageNumber]="pageNumber"
 													 (pageNumberChange)="setPage($event)"></scc-pager></div>
 				</div>

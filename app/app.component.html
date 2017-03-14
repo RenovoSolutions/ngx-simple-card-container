@@ -3,6 +3,7 @@
 	<scc-simple-card-container [data]="items"
 							   [columns]="columns"
 							   [count]="count"
+							   [paging]="true"
 							   [pageNumber]="pageNumber"
 							   (sort)="sort($event)">
 		<div *sccCardContent="let myItem">
