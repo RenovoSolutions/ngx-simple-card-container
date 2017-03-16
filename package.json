@@ -7,8 +7,9 @@
   "scripts": {
     "copy-html": "node config/copyHtml",
     "webpack-dev-server": "webpack-dev-server --config config/webpack.config.dev.js --inline --hot --open",
+    "ngc.dist": "ngc -p tsconfig.dist.json",
     "tsc.dist": "tsc -p tsconfig.dist.json",
-    "build": "npm-run-all tsc.dist copy-html",
+    "build": "npm-run-all ngc.dist copy-html",
     "start": "npm run webpack-dev-server",
     "test": "karma start config/karma.conf.js"
   },
@@ -31,6 +32,7 @@
     "zone.js": "^0.7.6"
   },
   "devDependencies": {
+    "@angular/compiler-cli": "^2.4.9",
     "@types/chai": "^3.4.34",
     "@types/sinon": "^1.16.35",
     "angular2-template-loader": "^0.6.2",
