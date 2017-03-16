@@ -1,6 +1,6 @@
 {
-  "name": "ngx-simple-card-container",
-  "version": "0.3.0-alpha.0",
+  "name": "",
+  "version": "0.0.0",
   "description": "A table component extended with the ability to open and close row details",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -9,6 +9,7 @@
     "webpack-dev-server": "webpack-dev-server --config config/webpack.config.dev.js --inline --hot --open",
     "ngc.dist": "ngc -p tsconfig.dist.json",
     "tsc.dist": "tsc -p tsconfig.dist.json",
+    "publish.dist": "cd dist && npm publish",
     "build": "npm-run-all ngc.dist copy-html",
     "start": "npm run webpack-dev-server",
     "test": "karma start config/karma.conf.js"
