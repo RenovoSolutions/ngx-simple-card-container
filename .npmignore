@@ -12,3 +12,6 @@ tsconfig.dist.json
 
 # Demo app files
 /app/
+
+# Source files
+/lib/
