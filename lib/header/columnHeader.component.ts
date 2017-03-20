@@ -3,6 +3,7 @@ import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from 
 import { IColumn } from '../interfaces';
 import { BreakpointSizesService } from '../services/breakpointSizes.service';
 import { SortDirection } from '../sortDirection';
+import { ColumnHeaderTemplate } from '../templates';
 
 @Component({
 	selector: 'scc-column-header',
@@ -12,6 +13,7 @@ import { SortDirection } from '../sortDirection';
 export class ColumnHeaderComponent<T> {
 	@Input() column: IColumn<T>;
 	@Output() sort: EventEmitter<IColumn<T>> = new EventEmitter<IColumn<T>>();
+	@Input() headerTemplate: ColumnHeaderTemplate;
 
 	sizeClass: string;
 	sortDirection = SortDirection;

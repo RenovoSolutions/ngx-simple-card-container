@@ -4,7 +4,8 @@
 		<div class="row">
 			<div *ngFor="let column of cardContainer.columns">
 				<scc-card-header-column [column]="column"
-										[item]="item"></scc-card-header-column>
+										[item]="item"
+										[columnTemplate]="getColumnTemplate(column.name)"></scc-card-header-column>
 			</div>
 		</div>
 	</div>

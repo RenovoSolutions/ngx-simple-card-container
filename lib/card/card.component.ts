@@ -1,6 +1,8 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
 import { SimpleCardContainerComponent } from '../container/simpleCardContainer.component';
+import { ColumnContentTemplate } from '../templates';
+import { getTemplate } from '../services/containerHelper';
 
 @Component({
 	selector: 'scc-card',
@@ -23,4 +25,6 @@ export class CardComponent<T> {
 			this.open.emit(this.item);
 		}
 	}
+
+	getColumnTemplate = name => getTemplate(name, this.cardContainer.columnTemplates);
 }

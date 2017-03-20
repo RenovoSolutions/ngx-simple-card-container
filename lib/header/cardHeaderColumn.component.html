@@ -1,3 +1,6 @@
 <div [ngClass]="sizeClass" [title]="column?.description || ''">
-	{{value}}
+	<div *ngIf="!columnTemplate">{{value}}</div>
+	<div *ngIf="columnTemplate">
+		<div [ngTemplateOutlet]="columnTemplate.template" [ngOutletContext]="context"></div>
+	</div>
 </div>

@@ -6,6 +6,8 @@
 							   [paging]="true"
 							   [pageNumber]="pageNumber"
 							   (sort)="sort($event)">
+		<div *sccColumnHeader="let item; name 'name'">Cool name</div>
+		<div *sccColumnContent="let value; name 'name'"># {{value}}</div>
 		<div *sccCardContent="let myItem">
 			Name: {{myItem.name}}
 			Value: {{myItem.value}}

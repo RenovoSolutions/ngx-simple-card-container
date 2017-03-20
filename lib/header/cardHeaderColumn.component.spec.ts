@@ -50,4 +50,13 @@ describe('CardHeaderColumnComponent', () => {
 
 		expect(component.value).to.equal(value);
 	});
+
+	it('should set the value as the implicit context and the item as an available context', () => {
+		component.column = <any>{ getValue: item => item.value };
+		const value = 123;
+		component.item = { value };
+
+		expect(component.context.$implicit).to.equal(value);
+		expect(component.context.item).to.equal(component.item);
+	});
 });

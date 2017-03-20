@@ -1,9 +1,17 @@
-import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ContentChild } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ContentChild, ContentChildren, QueryList } from '@angular/core';
 import { reduce } from 'lodash';
 
 import { IColumn, IPage } from '../interfaces';
-import { CardContentTemplate, CardFooterTemplate, ContainerHeaderTemplate, ContainerFooterTemplate } from '../templates';
+import { 
+	CardContentTemplate, 
+	CardFooterTemplate, 
+	ContainerHeaderTemplate, 
+	ContainerFooterTemplate,
+	ColumnHeaderTemplate,
+	ColumnContentTemplate,
+} from '../templates';
 import { PagingService } from '../services/paging.service';
+import { getTemplate } from '../services/containerHelper';
 
 export const defaultPageSize: number = 10;
 
@@ -41,6 +49,8 @@ export class SimpleCardContainerComponent<T> {
 	@ContentChild(CardFooterTemplate) cardFooter: CardFooterTemplate;
 	@ContentChild(ContainerHeaderTemplate) containerHeader: ContainerHeaderTemplate;
 	@ContentChild(ContainerFooterTemplate) containerFooter: ContainerFooterTemplate;
+	@ContentChildren(ColumnContentTemplate) columnTemplates: QueryList<ColumnContentTemplate>;
+	@ContentChildren(ColumnHeaderTemplate) columnHeaders: QueryList<ColumnHeaderTemplate>;
 
 	processedData: T[];
 	openCard: T;
@@ -74,4 +84,6 @@ export class SimpleCardContainerComponent<T> {
 	process(dataSet: T[]): T[] {
 		return reduce(this.dataFilters, (data, filter) => filter(data), dataSet);
 	}
+
+	getHeaderTemplate = name => getTemplate(name, this.columnHeaders);
 }
