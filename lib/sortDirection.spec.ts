@@ -8,8 +8,8 @@ describe('SortDirection', () => {
 	});
 
 	it('should return the name of the sort direction', () => {
-		expect(SortDirection.getFullName(SortDirection.ascending)).to.equal('ascending');
-		expect(SortDirection.getFullName(SortDirection.descending)).to.equal('descending');
-		expect(SortDirection.getFullName(SortDirection.none)).to.equal('none');
+		expect(SortDirection.ascending.fullName).to.equal('ascending');
+		expect(SortDirection.descending.fullName).to.equal('descending');
+		expect(SortDirection.none.fullName).to.equal('none');
 	});
 });
